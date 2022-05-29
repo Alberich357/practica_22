@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<table>
+    <thead>
+        <tr>
+            <th>NSS</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Tipo de sangre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% Object.keys(persons).forEach(function(prop) { %>
+        <tr>
+            <td><%= persons[prop].nss %></td>
+            <td><%= persons[prop].nombre %></td>
+            <td><%= persons[prop].edad %></td>
+            <td><%= persons[prop].tipoSangre %></td>
+            <td><a href="<%= `deletePerson/${persons[prop]._id}` %> ">Delete</a></td>
+            <td><a href="<%= `findById/${persons[prop]._id}` %> ">Update</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<a href="./main">back</a><br>
+</html>
